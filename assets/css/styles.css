@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color:#f4f4f4;
 }
 
 header {
@@ -10,4 +10,38 @@ header {
     color: white;
     padding: 1rem;
     text-align: center;
+}
+#task-input {
+    margin: 20px;
+    text-align: center;
+}
+
+#new-task {
+    padding: 10px;
+    width: 250px;
+    margin-right: 10px;
+}
+
+#add-task {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#tasks {
+    margin: 20px;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+#task-list li {
+    padding: 10px;
+    background-color: #eee;
+    margin-bottom: 5px;
+}
+
+#task-list li.completed {
+    text-decoration: line-through;
 }

@@ -72,3 +72,7 @@ document.getElementById('add-task').addEventListener('click', function() {
     }
     saveTasks();
 });
+
+//new features to be added
+//task priority,editing tasks, due dates, task sorting, subtasks
+//

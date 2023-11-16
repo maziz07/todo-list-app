@@ -75,4 +75,5 @@ document.getElementById('add-task').addEventListener('click', function() {
 
 //new features to be added
 //task priority,editing tasks, due dates, task sorting, subtasks
+//come up with pseudocode
 //

@@ -50,7 +50,10 @@ document.getElementById('add-task').addEventListener('click', function() {
 
     if (taskValue) {
         var li = document.createElement('li');
-        li.textContent = taskValue + ' - Due: ' + (dueDate ? dueDate : 'No deadline'); // Corrected line
+
+        // Create a text node for the task and due date
+        var textNode = document.createTextNode(taskValue + ' - Due: ' + (dueDate ? dueDate : 'No deadline'));
+        li.appendChild(textNode);
 
         var deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Delete';

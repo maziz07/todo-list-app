@@ -57,15 +57,16 @@ document.getElementById('add-task').addEventListener('click', function() {
         deleteBtn.className = 'delete-task';
         deleteBtn.onclick = function() {
             li.remove();
+            saveTasks();
         };
 
-        li.textContent = taskValue;
         li.appendChild(deleteBtn);
 
         li.addEventListener('click', function(e) {
             // Prevent the list item from being marked as complete when the delete button is clicked
             if (e.target !== deleteBtn) {
                 li.classList.toggle('completed');
+                saveTasks();
             }
         });
 

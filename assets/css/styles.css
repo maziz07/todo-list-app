@@ -45,6 +45,7 @@ header {
 #task-list li.completed {
     text-decoration: line-through;
     color: #999;
+}
 
 
 #delete-task {
@@ -55,4 +56,8 @@ header {
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        }
+#task-date{
+    padding: 10px;
+    margin-right: 10px;
 }

@@ -46,9 +46,11 @@ loadTasks();
 
 document.getElementById('add-task').addEventListener('click', function() {
     var taskValue = document.getElementById('new-task').value.trim();
+    var dueDate= document.getElementById('task-date').value;
 
     if (taskValue) {
         var li = document.createElement('li');
+        li.textContent= taskValue + ' -Due: ' + (dueDate ? dueDate: 'No deadline')
         var deleteBtn = document.createElement('button');
         
         deleteBtn.textContent = 'Delete';
@@ -69,6 +71,7 @@ document.getElementById('add-task').addEventListener('click', function() {
 
         document.getElementById('task-list').appendChild(li);
         document.getElementById('new-task').value = '';
+        document.getElementById('task-date').value = ''; // Reset the date input
     }
     saveTasks();
 });

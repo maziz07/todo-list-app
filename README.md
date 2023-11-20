@@ -8,6 +8,36 @@ A simple web application to manage tasks.
 - Mark tasks as done
 - Delete tasks
 
+## New Feature: Due Dates for Tasks
+
+### Overview
+
+We've enhanced the To-Do List app with a new feature that allows users to set due dates for their tasks. This addition helps in better managing tasks and keeping track of upcoming deadlines.
+
+### How It Works
+
+- When adding a new task, you can now also specify a due date.
+- Each task will display its due date alongside the task description.
+- Tasks without a specified due date will be marked as 'No deadline'.
+
+### Using the Feature
+
+1. **Adding a Task with a Due Date:**
+   - Enter your task in the task input field.
+   - Select a due date using the date picker.
+   - Click the 'Add Task' button to add the task to your list with the selected due date.
+
+2. **Viewing Tasks:**
+   - Tasks in the list will display their due dates.
+   - Tasks without due dates will show 'No deadline'.
+
+### Future Enhancements
+
+- **Sorting and Filtering:** We plan to implement sorting and filtering options to view tasks by their due dates.
+- **Highlighting Overdue Tasks:** Tasks past their due date will be highlighted to catch the user's attention.
+
+Stay tuned for more updates and enhancements!
+
 ## Technologies Used
 
 - HTML

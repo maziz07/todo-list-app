@@ -46,27 +46,26 @@ loadTasks();
 
 document.getElementById('add-task').addEventListener('click', function() {
     var taskValue = document.getElementById('new-task').value.trim();
-    var dueDate= document.getElementById('task-date').value;
+    var dueDate = document.getElementById('task-date').value;
 
     if (taskValue) {
         var li = document.createElement('li');
-        li.textContent= taskValue + ' -Due: ' + (dueDate ? dueDate : 'No deadline');
+        li.textContent = taskValue + ' - Due: ' + (dueDate ? dueDate : 'No deadline'); // Corrected line
+
         var deleteBtn = document.createElement('button');
-        
         deleteBtn.textContent = 'Delete';
         deleteBtn.className = 'delete-task';
         deleteBtn.onclick = function() {
             li.remove();
-            saveTasks();
+            saveTasks(); // Update storage after deletion
         };
 
         li.appendChild(deleteBtn);
 
         li.addEventListener('click', function(e) {
-            // Prevent the list item from being marked as complete when the delete button is clicked
             if (e.target !== deleteBtn) {
                 li.classList.toggle('completed');
-                saveTasks();
+                saveTasks(); // Update storage after toggling completion
             }
         });
 

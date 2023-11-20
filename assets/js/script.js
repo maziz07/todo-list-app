@@ -1,8 +1,14 @@
 function saveTasks() {
     var tasks = [];
     document.querySelectorAll('#task-list li').forEach(function(taskItem) {
+        // Assuming the due date is part of the text content in the format "Task - Due: date"
+        var taskParts = taskItem.textContent.split(' - Due: ');
+        var taskText = taskParts[0];
+        var dueDate = taskParts[1] || 'No deadline';
+
         tasks.push({
-            text: taskItem.firstChild.textContent,
+            text: taskText,
+            dueDate: dueDate,
             completed: taskItem.classList.contains('completed')
         });
     });
@@ -23,7 +29,8 @@ function loadTasks() {
                 saveTasks(); // Update storage after deletion
             };
 
-            li.textContent = task.text;
+            // Combine the task text and due date
+            li.textContent = task.text + ' - Due: ' + task.dueDate;
             li.appendChild(deleteBtn);
             if (task.completed) {
                 li.classList.add('completed');
@@ -41,12 +48,15 @@ function loadTasks() {
     }
 }
 
+
 // Call loadTasks to populate the list on page load
 loadTasks();
 
 document.getElementById('add-task').addEventListener('click', function() {
     var taskValue = document.getElementById('new-task').value.trim();
     var dueDate = document.getElementById('task-date').value;
+    console.log("Task: " + taskValue); // Debugging
+    console.log("Due Date: " + dueDate); // Debuggin
 
     if (taskValue) {
         var li = document.createElement('li');
